@@ -63,7 +63,7 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
-    /* Content */
+    /* Sections */
     section {
       padding: 70px 20px;
       background: #fff;
@@ -74,7 +74,12 @@
       color: #0a3d2e;
       font-weight: 700;
       margin-bottom: 30px;
+      animation: fadeIn 1.5s ease;
     }
+    section p, section ul {
+      animation: fadeIn 1.5s ease;
+    }
+
     section ul {
       list-style: none;
       padding-left: 0;
@@ -187,18 +192,18 @@
   <section>
     <div class="container">
       <h2>Why Choose Richbrains College?</h2>
-      <div class="row">
-        <div class="col-md-6">
+      <div class="row align-items-center">
+        <div class="col-md-6 mb-4 mb-md-0">
           <p>
-            At <strong>Richbrains College</strong>, we are committed to academic excellence and character development.
-            Our goal is to equip students with both intellectual and moral discipline to serve God and humanity.
+            At <strong>Richbrains College</strong>, we are committed to nurturing both academic excellence and moral integrity.
+            Our mission is to raise disciplined, knowledgeable, and God-fearing young men and women equipped to serve society responsibly.
           </p>
           <ul>
-            <li>Dedicated and qualified teaching staff</li>
+            <li>Experienced and dedicated teaching staff</li>
             <li>Comprehensive curriculum across all major SHS programs</li>
-            <li>Supportive and nurturing learning environment</li>
-            <li>Emphasis on moral and spiritual growth</li>
-            <li>Modern teaching aids and practical learning approach</li>
+            <li>Supportive and disciplined learning environment</li>
+            <li>Emphasis on character formation and moral values</li>
+            <li>Modern facilities and practical teaching methods</li>
           </ul>
         </div>
         <div class="col-md-6">
@@ -218,9 +223,9 @@
         <li>Two passport-sized photographs</li>
         <li>BECE or equivalent result slip (for SHS 1 applicants)</li>
         <li>Transfer or report card (for SHS 2 & SHS 3 applicants)</li>
-        <li>Birth certificate or any valid identification document</li>
+        <li>Birth certificate or valid identification document</li>
       </ul>
-      <p>Admissions are open to students who are determined to learn, improve, and succeed. We believe in second chances and lifelong learning.</p>
+      <p>We welcome all motivated students who are eager to learn, grow, and make a positive impact on society.</p>
     </div>
   </section>
 
@@ -230,6 +235,9 @@
       <h2>Apply or Enquire Now</h2>
       <form name="richbrains-admission" method="POST" data-netlify="true">
         <input type="hidden" name="form-name" value="richbrains-admission">
+        <input type="hidden" name="subject" value="Richbrains College Admissions Enquiry">
+        <input type="hidden" name="_replyto" value="Thank you for contacting Richbrains College Admissions. Our team will reach out to you shortly.">
+        
         <div class="row g-3">
           <div class="col-md-6">
             <label class="form-label">Full Name</label>
@@ -269,7 +277,7 @@
 
   <!-- WhatsApp Floating Button -->
   <a href="https://wa.me/233543911729?text=Hello%2C%20I%20would%20like%20to%20chat%20with%20Richbrains%20College%20about%20admissions." 
-     class="whatsapp-float" target="_blank" aria-label="Chat with Administration">
+     class="whatsapp-float" target="_blank" aria-label="Chat with Richbrains College">
     <i class="bi bi-whatsapp"></i>
   </a>
 
