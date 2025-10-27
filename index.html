@@ -16,12 +16,27 @@
       font-family: 'Poppins', sans-serif;
       height: 100%;
       background: linear-gradient(135deg, #0a3d2e, #1e8e5f);
+      background-attachment: fixed;
       color: #fff;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* Soft texture overlay for depth */
+    body::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(rgba(255,255,255,0.05) 1px, transparent 1px);
+      background-size: 40px 40px;
+      z-index: 0;
     }
 
     /* Navbar */
     .navbar {
       background: rgba(0, 0, 0, 0.75) !important;
+      position: relative;
+      z-index: 5;
     }
     .navbar-brand img {
       width: 55px;
@@ -48,6 +63,8 @@
       text-align: center;
       padding: 0 20px;
       animation: fadeIn 2s ease forwards;
+      position: relative;
+      z-index: 1;
     }
     .hero h1 {
       font-size: 3rem;
@@ -63,6 +80,7 @@
     .hero p {
       font-size: 1.2rem;
       margin-bottom: 20px;
+      color: #f8f8f8;
     }
 
     @keyframes fadeIn {
@@ -79,23 +97,40 @@
       padding: 12px 25px;
       border-radius: 30px;
       transition: 0.3s ease;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.25);
     }
     .btn-main:hover {
       background: #ffc107;
-      color: #000;
+      transform: translateY(-2px);
     }
 
     /* Announcement Section */
     .announcement {
-      background: #fff;
+      position: relative;
+      padding: 100px 20px;
+      background: linear-gradient(135deg, #ffffff 0%, #f3f3f3 100%);
       color: #333;
-      padding: 70px 20px;
+      z-index: 2;
     }
     .announcement h2 {
       color: #0a3d2e;
       font-weight: 700;
       margin-bottom: 25px;
       text-align: center;
+    }
+
+    /* Card Layout */
+    .announcement .card {
+      border: none;
+      border-radius: 20px;
+      padding: 40px;
+      background: #fff;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      transition: 0.4s ease;
+    }
+    .announcement .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.15);
     }
     .announcement ul {
       list-style: none;
@@ -108,10 +143,10 @@
 
     /* Footer */
     footer {
-      background: rgba(0,0,0,0.8);
+      background: rgba(0,0,0,0.85);
       color: #fff;
       text-align: center;
-      padding: 15px 10px;
+      padding: 20px 10px;
     }
 
     /* WhatsApp Floating Button */
@@ -166,9 +201,9 @@
     }
 
     @media (max-width: 768px) {
-      .hero h1 { font-size: 2rem; }
+      .hero h1 { font-size: 2.2rem; }
       .hero p { font-size: 1rem; }
-      .announcement h2 { font-size: 1.6rem; }
+      .announcement .card { padding: 25px; }
     }
   </style>
 </head>
@@ -210,23 +245,26 @@
   <!-- Announcement Section -->
   <section id="announcement" class="announcement">
     <div class="container">
-      <h2>🎓 Admissions Open for SHS 1–3 Students!</h2>
-      <div class="row align-items-center">
-        <div class="col-md-12">
-          <p>At <strong>Richbrains College</strong>, we provide a supportive environment where students thrive academically and personally. We offer a range of programs, including:</p>
-          <ul>
-            <li>General Science</li>
-            <li>General Arts</li>
-            <li>Business</li>
-            <li>Visual Arts</li>
-            <li>Home Economics</li>
-            <li>Agricultural Science</li>
-          </ul>
-          <p>
-            Whether you’re continuing your education or seeking a second chance to achieve your goals,
-            <strong>Richbrains College</strong> is dedicated to nurturing excellence through discipline, knowledge, and integrity.
-          </p>
-          <p><strong>📅 Admissions are ongoing!</strong> Enroll now — the next WASSCE session begins in <strong>April 2026</strong>.</p>
+      <div class="card mx-auto col-lg-10 col-xl-8">
+        <h2>🎓 Admissions Open for SHS 1–3 Students!</h2>
+        <p>
+          At <strong>Richbrains College</strong>, we provide a supportive environment where students thrive academically and personally.
+          We offer a range of programs, including:
+        </p>
+        <ul>
+          <li>General Science</li>
+          <li>General Arts</li>
+          <li>Business</li>
+          <li>Visual Arts</li>
+          <li>Home Economics</li>
+          <li>Agricultural Science</li>
+        </ul>
+        <p>
+          Whether you’re continuing your education or seeking a second chance to achieve your goals,
+          <strong>Richbrains College</strong> is dedicated to nurturing excellence through discipline, knowledge, and integrity.
+        </p>
+        <p><strong>📅 Admissions are ongoing!</strong> Enroll now — the next WASSCE session begins in <strong>April 2026</strong>.</p>
+        <div class="text-center">
           <a href="admission.html" class="btn-main">Apply Now</a>
         </div>
       </div>
@@ -234,7 +272,7 @@
   </section>
 
   <!-- WhatsApp Floating Button -->
-  <a href="https://wa.me/233543911729?text=Hello%2C%20I%20would%20like%20to%20chat%20with%20Richbrains%20College%20about%20admissions." 
+  <a href="https://wa.me/233543911729?text=Hello%2C%20I%20would%20like%20to%20chat%20with%20Richbrains%20College%20about%20admissions."
      class="whatsapp-float" target="_blank" aria-label="Chat with Administration">
     <i class="bi bi-whatsapp"></i>
   </a>
