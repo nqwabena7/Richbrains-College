@@ -143,30 +143,30 @@
       border-radius: 20px;
       border: none;
       box-shadow: 0 10px 40px rgba(0,0,0,0.3);
-    }
-
-    .modal-header {
-      background: linear-gradient(135deg, #0a3d2e, #1e8e5f);
-      color: white;
-      border-bottom: none;
-      border-top-left-radius: 20px;
-      border-top-right-radius: 20px;
+      overflow: hidden;
     }
 
     .modal-body {
-      color: #333;
-      background: #fff;
-      padding: 25px;
-      font-size: 1rem;
-      line-height: 1.6;
-      text-align: left;
+      padding: 0;
+    }
+
+    .modal-body img {
+      width: 100%;
+      height: auto;
+      display: block;
     }
 
     .modal-footer {
       border-top: none;
       background: #fff;
       justify-content: center;
-      padding-bottom: 25px;
+      padding: 15px 0;
+    }
+
+    .modal-footer .btn {
+      border-radius: 30px;
+      padding: 10px 25px;
+      font-weight: bold;
     }
 
     @media (max-width: 768px) {
@@ -217,31 +217,16 @@
     <i class="bi bi-whatsapp"></i>
   </a>
 
-  <!-- Admission Info Modal -->
-  <div class="modal fade" id="admissionModal" tabindex="-1" aria-labelledby="admissionModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-md">
+  <!-- Flyer Modal -->
+  <div class="modal fade" id="flyerModal" tabindex="-1" aria-labelledby="flyerModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
       <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="admissionModalLabel">Admissions Open!</h5>
-          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <p>
-            🎓 <strong>Admissions are now open for SHS 1–3 students!</strong><br>
-            Join <strong>Richbrains College</strong> — where discipline meets academic excellence.
-          </p>
-          <ul>
-            <li>General Science</li>
-            <li>General Arts</li>
-            <li>Business</li>
-            <li>Visual Arts</li>
-            <li>Home Economics</li>
-            <li>Agricultural Science</li>
-          </ul>
-          <p>Enroll today and be part of a family dedicated to <em>Service to God and Humanity.</em></p>
+        <div class="modal-body p-0">
+          <img src="assets/images/flyer.jpg" alt="Richbrains College Admission Flyer">
         </div>
         <div class="modal-footer">
-          <a href="admission.html" class="btn btn-success px-4">Apply Now</a>
+          <a href="admission.html" class="btn btn-success">Apply Now</a>
+          <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
         </div>
       </div>
     </div>
@@ -255,10 +240,10 @@
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
-  <!-- Show modal on page load -->
+  <!-- Show flyer modal on page load -->
   <script>
     window.addEventListener('load', function() {
-      const modal = new bootstrap.Modal(document.getElementById('admissionModal'));
+      const modal = new bootstrap.Modal(document.getElementById('flyerModal'));
       modal.show();
     });
   </script>
