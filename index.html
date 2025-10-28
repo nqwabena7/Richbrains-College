@@ -18,37 +18,40 @@
       background: linear-gradient(135deg, #0a3d2e, #1e8e5f);
       background-attachment: fixed;
       color: #fff;
-      position: relative;
       overflow-x: hidden;
-    }
-
-    body::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background-image: radial-gradient(rgba(255,255,255,0.05) 1px, transparent 1px);
-      background-size: 40px 40px;
-      z-index: 0;
     }
 
     /* Navbar */
     .navbar {
-      background: rgba(0, 0, 0, 0.75) !important;
-      position: relative;
-      z-index: 5;
+      background: rgba(0, 0, 0, 0.85);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
     }
+
     .navbar-brand img {
-      width: 55px;
-      height: 55px;
+      width: 50px;
+      height: 50px;
       border-radius: 50%;
-      margin-right: 10px;
       object-fit: cover;
+      margin-right: 10px;
     }
-    .navbar .nav-link {
-      color: #fff !important;
+
+    .navbar-brand span {
+      font-weight: 600;
+      font-size: 1.2rem;
+    }
+
+    .nav-link {
+      color: #f8f8f8 !important;
       transition: 0.3s ease;
+      font-weight: 500;
     }
-    .navbar .nav-link:hover {
+
+    .nav-link:hover {
       color: #f8d210 !important;
     }
 
@@ -56,116 +59,54 @@
     .hero {
       min-height: 100vh;
       display: flex;
-      align-items: center;
-      justify-content: center;
       flex-direction: column;
+      justify-content: center;
+      align-items: center;
       text-align: center;
       padding: 0 20px;
-      animation: fadeIn 2s ease forwards;
+      background: rgba(0, 0, 0, 0.4);
       position: relative;
       z-index: 1;
     }
+
     .hero h1 {
       font-size: 3rem;
       font-weight: 700;
+      letter-spacing: 1px;
     }
-    .hero .motto {
-      font-size: 1.2rem;
+
+    .hero p.motto {
+      font-size: 1.3rem;
       font-style: italic;
       color: #f8d210;
       margin-top: 10px;
-      margin-bottom: 25px;
-    }
-    .hero p {
-      font-size: 1.2rem;
-      margin-bottom: 20px;
-      color: #f8f8f8;
     }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
+    .hero p.desc {
+      font-size: 1.1rem;
+      color: #f0f0f0;
+      max-width: 600px;
+      margin-top: 20px;
     }
 
-    /* Button */
     .btn-main {
+      margin-top: 30px;
       background: #f8d210;
       color: #000;
       font-weight: bold;
       border: none;
-      padding: 12px 25px;
+      padding: 12px 30px;
       border-radius: 30px;
-      transition: 0.3s ease;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.25);
+      transition: 0.3s;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.25);
     }
+
     .btn-main:hover {
       background: #ffc107;
-      transform: translateY(-2px);
+      transform: translateY(-3px);
     }
 
-    /* Announcement Section */
-    .announcement {
-      position: relative;
-      padding: 100px 20px;
-      background: linear-gradient(135deg, #ffffff 0%, #f3f3f3 100%);
-      color: #333;
-      z-index: 2;
-    }
-    .announcement h2 {
-      color: #0a3d2e;
-      font-weight: 700;
-      margin-bottom: 25px;
-      text-align: center;
-    }
-
-    .announcement .card {
-      border: none;
-      border-radius: 20px;
-      padding: 40px;
-      background: #fff;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-      transition: 0.4s ease;
-    }
-    .announcement .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 15px 35px rgba(0,0,0,0.15);
-    }
-    .announcement ul {
-      list-style: none;
-      padding: 0;
-      margin-bottom: 20px;
-    }
-    .announcement ul li::before {
-      content: "✅ ";
-    }
-
-    /* Modal */
-    .modal-content {
-      border-radius: 20px;
-      overflow: hidden;
-      border: none;
-    }
-    .modal-body img {
-      width: 100%;
-      height: auto;
-      border-radius: 15px;
-    }
-    .modal-dialog {
-      max-width: 420px;
-      margin: auto;
-      top: 50%;
-      transform: translateY(-50%);
-    }
-
-    /* Footer */
-    footer {
-      background: rgba(0,0,0,0.85);
-      color: #fff;
-      text-align: center;
-      padding: 20px 10px;
-    }
-
-    /* WhatsApp Floating Button */
+    /* WhatsApp Button */
     .whatsapp-float {
       position: fixed;
       bottom: 22px;
@@ -182,60 +123,50 @@
       justify-content: center;
       box-shadow: 0 4px 15px rgba(0,0,0,0.25);
       z-index: 1000;
-      animation: pulse 2s infinite;
-      transition: transform 0.25s ease, background-color 0.25s ease;
+      transition: transform 0.25s ease;
     }
+
     .whatsapp-float:hover {
       transform: scale(1.1);
       background-color: #1ebe57;
-      box-shadow: 0 0 20px rgba(37, 211, 102, 0.6);
-      animation: none;
     }
-    @keyframes pulse {
-      0% { box-shadow: 0 0 0 0 rgba(37,211,102,0.4); }
-      70% { box-shadow: 0 0 0 15px rgba(37,211,102,0); }
-      100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); }
-    }
-    .whatsapp-tooltip {
-      position: fixed;
-      bottom: 95px;
-      right: 30px;
-      background-color: rgba(0,0,0,0.8);
+
+    footer {
+      background: rgba(0, 0, 0, 0.85);
       color: #fff;
-      padding: 6px 12px;
-      border-radius: 8px;
-      font-size: 0.85rem;
-      opacity: 0;
-      pointer-events: none;
-      transform: translateY(10px);
-      transition: opacity 0.3s ease, transform 0.3s ease;
-      z-index: 1000;
-    }
-    .whatsapp-float:hover + .whatsapp-tooltip {
-      opacity: 1;
-      transform: translateY(0);
+      text-align: center;
+      padding: 20px 10px;
     }
 
     @media (max-width: 768px) {
-      .hero h1 { font-size: 2.2rem; }
-      .hero p { font-size: 1rem; }
-      .announcement .card { padding: 25px; }
-      .modal-dialog { max-width: 90%; }
+      .hero h1 {
+        font-size: 2.3rem;
+      }
+      .hero p.desc {
+        font-size: 1rem;
+      }
     }
   </style>
 </head>
-<body>
 
+<body>
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark">
     <div class="container">
       <a class="navbar-brand d-flex align-items-center" href="#">
         <img src="assets/images/richbrains-logo.png" alt="Richbrains College Logo">
-        <div>
-          <span>Richbrains College</span><br>
-          <small class="text-warning fst-italic">"Service to God and Humanity"</small>
-        </div>
+        <span>Richbrains College</span>
       </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="admission.html">Admissions</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
     </div>
   </nav>
 
@@ -243,71 +174,23 @@
   <section class="hero">
     <h1>Welcome to Richbrains College</h1>
     <p class="motto">"Service to God and Humanity"</p>
-    <p>Building disciplined minds and nurturing excellence for a brighter future.</p>
-    <a href="#announcement" class="btn-main">View Admission Info</a>
+    <p class="desc">
+      Empowering students with discipline, integrity, and academic excellence to lead in a changing world.
+    </p>
+    <a href="admission.html" class="btn-main">Apply for Admission</a>
   </section>
 
-  <!-- Announcement Section -->
-  <section id="announcement" class="announcement">
-    <div class="container">
-      <div class="card mx-auto col-lg-10 col-xl-8">
-        <h2>🎓 Admissions Open for SHS 1–3 Students!</h2>
-        <p>
-          At <strong>Richbrains College</strong>, we provide a supportive environment where students thrive academically and personally.
-          We offer a range of programs, including:
-        </p>
-        <ul>
-          <li>General Science</li>
-          <li>General Arts</li>
-          <li>Business</li>
-          <li>Visual Arts</li>
-          <li>Home Economics</li>
-          <li>Agricultural Science</li>
-        </ul>
-        <p>
-          Whether you’re continuing your education or seeking a second chance to achieve your goals,
-          <strong>Richbrains College</strong> is dedicated to nurturing excellence through discipline, knowledge, and integrity.
-        </p>
-        <p><strong>📅 Admissions are ongoing!</strong> Enroll now — the next WASSCE session begins in <strong>April 2026</strong>.</p>
-        <div class="text-center">
-          <a href="admission.html" class="btn-main">Apply Now</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Flyer Modal -->
-  <div class="modal fade" id="flyerModal" tabindex="-1" aria-labelledby="flyerModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-body p-0">
-          <img src="assets/images/flyer.jpg" alt="Richbrains Flyer">
-        </div>
-        <div class="text-center p-2">
-          <button type="button" class="btn btn-success btn-sm" data-bs-dismiss="modal">Close</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- WhatsApp Floating Button -->
-  <a href="https://wa.me/233543911729?text=Hello%2C%20I%20would%20like%20to%20chat%20with%20Richbrains%20College%20about%20admissions."
-     class="whatsapp-float" target="_blank" aria-label="Chat with Administration">
+  <!-- WhatsApp -->
+  <a href="https://wa.me/233543911729?text=Hello%2C%20I%20would%20like%20to%20know%20more%20about%20admissions."
+     class="whatsapp-float" target="_blank" aria-label="Chat with Richbrains College">
     <i class="bi bi-whatsapp"></i>
   </a>
-  <div class="whatsapp-tooltip">Chat with Administration</div>
 
   <!-- Footer -->
   <footer>
-    <p>&copy; 2025 Richbrains College. All rights reserved.</p>
+    <p>&copy; 2025 Richbrains College. All Rights Reserved.</p>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  <script>
-    window.addEventListener("load", () => {
-      const flyerModal = new bootstrap.Modal(document.getElementById("flyerModal"));
-      flyerModal.show();
-    });
-  </script>
 </body>
 </html>
