@@ -52,7 +52,7 @@
       color: #f8d210 !important;
     }
 
-    /* Hero */
+    /* Hero Section */
     .hero {
       min-height: 100vh;
       display: flex;
@@ -76,12 +76,18 @@
       margin-top: 10px;
       margin-bottom: 25px;
     }
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+      color: #f8f8f8;
+    }
 
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
     }
 
+    /* Button */
     .btn-main {
       background: #f8d210;
       color: #000;
@@ -97,8 +103,9 @@
       transform: translateY(-2px);
     }
 
-    /* Announcement */
+    /* Announcement Section */
     .announcement {
+      position: relative;
       padding: 100px 20px;
       background: linear-gradient(135deg, #ffffff 0%, #f3f3f3 100%);
       color: #333;
@@ -110,6 +117,7 @@
       margin-bottom: 25px;
       text-align: center;
     }
+
     .announcement .card {
       border: none;
       border-radius: 20px;
@@ -122,6 +130,32 @@
       transform: translateY(-5px);
       box-shadow: 0 15px 35px rgba(0,0,0,0.15);
     }
+    .announcement ul {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 20px;
+    }
+    .announcement ul li::before {
+      content: "✅ ";
+    }
+
+    /* Modal */
+    .modal-content {
+      border-radius: 20px;
+      overflow: hidden;
+      border: none;
+    }
+    .modal-body img {
+      width: 100%;
+      height: auto;
+      border-radius: 15px;
+    }
+    .modal-dialog {
+      max-width: 420px;
+      margin: auto;
+      top: 50%;
+      transform: translateY(-50%);
+    }
 
     /* Footer */
     footer {
@@ -131,7 +165,7 @@
       padding: 20px 10px;
     }
 
-    /* WhatsApp Button */
+    /* WhatsApp Floating Button */
     .whatsapp-float {
       position: fixed;
       bottom: 22px;
@@ -154,29 +188,39 @@
     .whatsapp-float:hover {
       transform: scale(1.1);
       background-color: #1ebe57;
+      box-shadow: 0 0 20px rgba(37, 211, 102, 0.6);
       animation: none;
     }
-
     @keyframes pulse {
       0% { box-shadow: 0 0 0 0 rgba(37,211,102,0.4); }
       70% { box-shadow: 0 0 0 15px rgba(37,211,102,0); }
       100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); }
     }
-
-    /* Flyer Modal */
-    .modal-content {
-      background: transparent;
-      border: none;
+    .whatsapp-tooltip {
+      position: fixed;
+      bottom: 95px;
+      right: 30px;
+      background-color: rgba(0,0,0,0.8);
+      color: #fff;
+      padding: 6px 12px;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(10px);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+      z-index: 1000;
     }
-    .flyer-img {
-      width: 100%;
-      border-radius: 15px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    .whatsapp-float:hover + .whatsapp-tooltip {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     @media (max-width: 768px) {
       .hero h1 { font-size: 2.2rem; }
+      .hero p { font-size: 1rem; }
       .announcement .card { padding: 25px; }
+      .modal-dialog { max-width: 90%; }
     }
   </style>
 </head>
@@ -195,7 +239,7 @@
     </div>
   </nav>
 
-  <!-- Hero -->
+  <!-- Hero Section -->
   <section class="hero">
     <h1>Welcome to Richbrains College</h1>
     <p class="motto">"Service to God and Humanity"</p>
@@ -203,13 +247,16 @@
     <a href="#announcement" class="btn-main">View Admission Info</a>
   </section>
 
-  <!-- Announcement -->
+  <!-- Announcement Section -->
   <section id="announcement" class="announcement">
     <div class="container">
-      <div class="card mx-auto col-lg-10 col-xl-8 text-center">
+      <div class="card mx-auto col-lg-10 col-xl-8">
         <h2>🎓 Admissions Open for SHS 1–3 Students!</h2>
-        <p>At <strong>Richbrains College</strong>, we provide a supportive environment where students thrive academically and personally. We offer:</p>
-        <ul class="list-unstyled">
+        <p>
+          At <strong>Richbrains College</strong>, we provide a supportive environment where students thrive academically and personally.
+          We offer a range of programs, including:
+        </p>
+        <ul>
           <li>General Science</li>
           <li>General Arts</li>
           <li>Business</li>
@@ -217,29 +264,38 @@
           <li>Home Economics</li>
           <li>Agricultural Science</li>
         </ul>
-        <p><strong>📅 Admissions are ongoing!</strong> Enroll now — next WASSCE session begins <strong>April 2026</strong>.</p>
-        <a href="admission.html" class="btn-main">Apply Now</a>
+        <p>
+          Whether you’re continuing your education or seeking a second chance to achieve your goals,
+          <strong>Richbrains College</strong> is dedicated to nurturing excellence through discipline, knowledge, and integrity.
+        </p>
+        <p><strong>📅 Admissions are ongoing!</strong> Enroll now — the next WASSCE session begins in <strong>April 2026</strong>.</p>
+        <div class="text-center">
+          <a href="admission.html" class="btn-main">Apply Now</a>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- Flyer Modal -->
   <div class="modal fade" id="flyerModal" tabindex="-1" aria-labelledby="flyerModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-lg">
-      <div class="modal-content text-center">
-        <div class="modal-body">
-          <img src="assets/images/flyer.jpg" alt="Richbrains College Flyer" class="flyer-img">
-          <button type="button" class="btn btn-warning mt-3" data-bs-dismiss="modal">Close</button>
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-body p-0">
+          <img src="assets/images/flyer.jpg" alt="Richbrains Flyer">
+        </div>
+        <div class="text-center p-2">
+          <button type="button" class="btn btn-success btn-sm" data-bs-dismiss="modal">Close</button>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- WhatsApp -->
+  <!-- WhatsApp Floating Button -->
   <a href="https://wa.me/233543911729?text=Hello%2C%20I%20would%20like%20to%20chat%20with%20Richbrains%20College%20about%20admissions."
-     class="whatsapp-float" target="_blank">
+     class="whatsapp-float" target="_blank" aria-label="Chat with Administration">
     <i class="bi bi-whatsapp"></i>
   </a>
+  <div class="whatsapp-tooltip">Chat with Administration</div>
 
   <!-- Footer -->
   <footer>
@@ -247,14 +303,10 @@
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
   <script>
-    // Auto show flyer modal 1.5 seconds after load
-    window.addEventListener('load', () => {
-      setTimeout(() => {
-        const flyerModal = new bootstrap.Modal(document.getElementById('flyerModal'));
-        flyerModal.show();
-      }, 1500);
+    window.addEventListener("load", () => {
+      const flyerModal = new bootstrap.Modal(document.getElementById("flyerModal"));
+      flyerModal.show();
     });
   </script>
 </body>
