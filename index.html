@@ -1,264 +1,265 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Richbrains College</title>
-
-  <!-- Bootstrap -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
-
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>T-WILL Trading Enterprise — Phones & Accessories</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
-    body, html {
-      margin: 0;
-      padding: 0;
-      font-family: 'Poppins', sans-serif;
-      height: 100%;
-      background: linear-gradient(135deg, #0a3d2e, #1e8e5f);
-      background-attachment: fixed;
-      color: #fff;
-      overflow-x: hidden;
-    }
-
-    /* Navbar */
-    .navbar {
-      background: rgba(0, 0, 0, 0.85);
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      z-index: 1000;
-    }
-
-    .navbar-brand img {
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin-right: 10px;
-    }
-
-    .navbar-brand span {
-      font-weight: 600;
-      font-size: 1.2rem;
-    }
-
-    .nav-link {
-      color: #f8f8f8 !important;
-      transition: 0.3s ease;
-      font-weight: 500;
-    }
-
-    .nav-link:hover {
-      color: #f8d210 !important;
-    }
-
-    /* Hero Section */
-    .hero {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 0 20px;
-      background: rgba(0, 0, 0, 0.4);
-      position: relative;
-      z-index: 1;
-    }
-
-    .hero h1 {
-      font-size: 3rem;
-      font-weight: 700;
-      letter-spacing: 1px;
-    }
-
-    .hero p.motto {
-      font-size: 1.3rem;
-      font-style: italic;
-      color: #f8d210;
-      margin-top: 10px;
-    }
-
-    .hero p.desc {
-      font-size: 1.1rem;
-      color: #f0f0f0;
-      max-width: 600px;
-      margin-top: 20px;
-    }
-
-    .btn-main {
-      margin-top: 30px;
-      background: #f8d210;
-      color: #000;
-      font-weight: bold;
-      border: none;
-      padding: 12px 30px;
-      border-radius: 30px;
-      transition: 0.3s;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.25);
-    }
-
-    .btn-main:hover {
-      background: #ffc107;
-      transform: translateY(-3px);
-    }
-
-    /* WhatsApp Button */
-    .whatsapp-float {
-      position: fixed;
-      bottom: 22px;
-      right: 22px;
-      background-color: #25d366;
-      color: white;
-      border-radius: 50%;
-      width: 60px;
-      height: 60px;
-      font-size: 30px;
-      text-align: center;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.25);
-      z-index: 1000;
-      transition: transform 0.25s ease;
-    }
-
-    .whatsapp-float:hover {
-      transform: scale(1.1);
-      background-color: #1ebe57;
-    }
-
-    footer {
-      background: rgba(0, 0, 0, 0.85);
-      color: #fff;
-      text-align: center;
-      padding: 20px 10px;
-    }
-
-    /* Modal */
-    .modal-dialog {
-      max-width: 600px; /* ✅ limits size of flyer modal */
-      width: 90%;
-    }
-
-    .modal-content {
-      border-radius: 20px;
-      border: none;
-      box-shadow: 0 10px 40px rgba(0,0,0,0.3);
-      overflow: hidden;
-    }
-
-    .modal-body {
-      padding: 0;
-      background: #fff;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .modal-body img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    .modal-footer {
-      border-top: none;
-      background: #fff;
-      justify-content: center;
-      padding: 15px 0;
-    }
-
-    .modal-footer .btn {
-      border-radius: 30px;
-      padding: 10px 25px;
-      font-weight: bold;
-    }
-
-    @media (max-width: 768px) {
-      .hero h1 {
-        font-size: 2.3rem;
-      }
-      .hero p.desc {
-        font-size: 1rem;
-      }
-      .modal-dialog {
-        max-width: 90%;
-      }
-    }
+    body { font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; }
+    /* subtle shadow for bottom nav */
+    .safe-bottom { padding-bottom: env(safe-area-inset-bottom); }
   </style>
 </head>
+<body class="bg-gray-50 text-gray-800 safe-bottom">
 
-<body>
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark">
-    <div class="container">
-      <a class="navbar-brand d-flex align-items-center" href="#">
-        <img src="assets/images/richbrains-logo.png" alt="Richbrains College Logo">
-        <span>Richbrains College</span>
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="admission.html">Admissions</a></li>
-          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-        </ul>
+  <!-- Header / Top bar -->
+  <header class="bg-white shadow-sm fixed top-0 left-0 right-0 z-30">
+    <div class="max-w-2xl mx-auto px-4 py-3 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <button id="menuBtn" class="p-2 rounded-md focus:outline-none">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+        <div>
+          <a href="#" class="text-lg font-bold text-indigo-600">T-WILL</a>
+          <div class="text-xs text-gray-500">Trading Enterprise</div>
+        </div>
       </div>
+
+      <div class="flex items-center gap-3">
+        <a href="tel:+233548098014" class="hidden sm:inline-flex items-center px-3 py-1 rounded-md bg-indigo-50 text-indigo-600 text-sm">Call: +233 54 965 6912</a>
+        <button id="cartBtn" class="p-2 rounded-md">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4" />
+            <circle cx="7" cy="20" r="1" />
+            <circle cx="20" cy="20" r="1" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile menu (hidden by default) -->
+  <div id="mobileMenu" class="fixed inset-y-0 left-0 z-40 w-64 bg-white shadow-lg transform -translate-x-full transition-transform duration-200">
+    <div class="p-4 border-b">
+      <div class="text-lg font-semibold">Menu</div>
+    </div>
+    <nav class="p-4 space-y-2">
+      <a href="#" class="block px-3 py-2 rounded-md hover:bg-gray-100">Home</a>
+      <a href="#products" class="block px-3 py-2 rounded-md hover:bg-gray-100">Phones</a>
+      <a href="#accessories" class="block px-3 py-2 rounded-md hover:bg-gray-100">Accessories</a>
+      <a href="#contact" class="block px-3 py-2 rounded-md hover:bg-gray-100">Contact</a>
+      <a href="#about" class="block px-3 py-2 rounded-md hover:bg-gray-100">About Us</a>
+    </nav>
+  </div>
+
+  <main class="max-w-2xl mx-auto pt-20 px-4 pb-28">
+
+    <!-- Hero -->
+    <section class="relative bg-gradient-to-r from-indigo-600 to-indigo-400 text-white rounded-xl overflow-hidden shadow-md p-5 mb-6">
+      <div class="flex items-center gap-4">
+        <img src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&w=200&q=60" alt="phones" class="w-20 h-20 rounded-lg object-cover shadow-md">
+        <div>
+          <h1 class="text-xl font-bold">T-WILL Trading Enterprise</h1>
+          <p class="text-sm opacity-90">Your one-stop shop for phones, chargers, cases, earphones and more. Fast delivery across Ghana.</p>
+        </div>
+      </div>
+      <div class="mt-4">
+        <form class="flex gap-2">
+          <input type="search" placeholder="Search phones & accessories" class="flex-1 rounded-md px-3 py-2 text-sm border-0 focus:outline-none" />
+          <button class="bg-white text-indigo-600 px-4 rounded-md font-semibold text-sm">Search</button>
+        </form>
+      </div>
+
+      <div class="absolute top-3 right-3 text-xs bg-white bg-opacity-20 px-2 py-1 rounded">Secure payments • Warranty</div>
+    </section>
+
+    <!-- Categories -->
+    <section class="mb-5">
+      <h2 class="text-lg font-semibold mb-3">Shop by category</h2>
+      <div class="grid grid-cols-4 gap-3">
+        <a href="#products" class="bg-white rounded-lg p-3 text-center shadow-sm">
+          <div class="text-2xl">📱</div>
+          <div class="text-xs mt-1">Phones</div>
+        </a>
+        <a href="#accessories" class="bg-white rounded-lg p-3 text-center shadow-sm">
+          <div class="text-2xl">🎧</div>
+          <div class="text-xs mt-1">Audio</div>
+        </a>
+        <a href="#accessories" class="bg-white rounded-lg p-3 text-center shadow-sm">
+          <div class="text-2xl">🔌</div>
+          <div class="text-xs mt-1">Chargers</div>
+        </a>
+        <a href="#accessories" class="bg-white rounded-lg p-3 text-center shadow-sm">
+          <div class="text-2xl">📦</div>
+          <div class="text-xs mt-1">Cases</div>
+        </a>
+      </div>
+    </section>
+
+    <!-- Featured products -->
+    <section id="products" class="mb-6">
+      <div class="flex items-center justify-between mb-3">
+        <h2 class="text-lg font-semibold">Featured phones</h2>
+        <a href="#" class="text-sm text-indigo-600 font-medium">See all</a>
+      </div>
+
+      <div class="grid grid-cols-2 gap-3">
+        <!-- Product card 1 -->
+        <div class="bg-white rounded-lg p-3 shadow-sm">
+          <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=600&q=60" alt="Phone 1" class="w-full h-36 object-cover rounded-md mb-2">
+          <div class="text-sm font-semibold">T-WILL S Pro</div>
+          <div class="text-xs text-gray-500 mb-2">128GB • Dual SIM</div>
+          <div class="flex items-center justify-between">
+            <div>
+              <div class="text-indigo-600 font-bold">GHS 2,999</div>
+              <div class="text-xs text-gray-500">or 3x GHS 1,000</div>
+            </div>
+            <button class="bg-indigo-600 text-white px-3 py-1 rounded-md text-sm">Buy</button>
+          </div>
+        </div>
+
+        <!-- Product card 2 -->
+        <div class="bg-white rounded-lg p-3 shadow-sm">
+          <img src="https://images.unsplash.com/photo-1510557880182-3d4d3c8f2d6e?auto=format&fit=crop&w=600&q=60" alt="Phone 2" class="w-full h-36 object-cover rounded-md mb-2">
+          <div class="text-sm font-semibold">T-WILL Note</div>
+          <div class="text-xs text-gray-500 mb-2">256GB • AMOLED</div>
+          <div class="flex items-center justify-between">
+            <div>
+              <div class="text-indigo-600 font-bold">GHS 3,799</div>
+              <div class="text-xs text-gray-500">Free case</div>
+            </div>
+            <button class="bg-indigo-600 text-white px-3 py-1 rounded-md text-sm">Buy</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Accessories -->
+    <section id="accessories" class="mb-6">
+      <div class="flex items-center justify-between mb-3">
+        <h2 class="text-lg font-semibold">Accessories</h2>
+        <a href="#" class="text-sm text-indigo-600 font-medium">See all</a>
+      </div>
+
+      <div class="grid grid-cols-2 gap-3">
+        <div class="bg-white rounded-lg p-3 shadow-sm">
+          <img src="https://images.unsplash.com/photo-1518444021086-5823be1e9a07?auto=format&fit=crop&w=600&q=60" alt="Earphones" class="w-full h-28 object-cover rounded-md mb-2">
+          <div class="text-sm font-semibold">Wireless Earbuds</div>
+          <div class="text-xs text-gray-500 mb-2">Noise-cancelling</div>
+          <div class="flex items-center justify-between">
+            <div class="text-indigo-600 font-bold">GHS 250</div>
+            <button class="bg-indigo-600 text-white px-3 py-1 rounded-md text-sm">Add</button>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-lg p-3 shadow-sm">
+          <img src="https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=600&q=60" alt="Charger" class="w-full h-28 object-cover rounded-md mb-2">
+          <div class="text-sm font-semibold">Fast Charger</div>
+          <div class="text-xs text-gray-500 mb-2">30W • USB-C</div>
+          <div class="flex items-center justify-between">
+            <div class="text-indigo-600 font-bold">GHS 120</div>
+            <button class="bg-indigo-600 text-white px-3 py-1 rounded-md text-sm">Add</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About / Contact -->
+    <section id="about" class="mb-6 bg-white rounded-lg p-4 shadow-sm">
+      <h3 class="font-semibold">About T-WILL</h3>
+      <p class="text-sm text-gray-600 mt-2">T-WILL Trading Enterprise supplies quality phones and accessories with warranty and fast customer service. Visit our store or order online for delivery nationwide.</p>
+
+      <div id="contact" class="mt-4 grid grid-cols-2 gap-3">
+        <div>
+          <div class="text-xs text-gray-500">Phone</div>
+          <div class="font-medium">+233 54 809 8014</div>
+        </div>
+        <div>
+          <div class="text-xs text-gray-500">Location</div>
+          <div class="font-medium">Accra, Ghana</div>
+        </div>
+      </div>
+
+      <form class="mt-4 space-y-2" onsubmit="event.preventDefault(); alert('Thanks — we\'ll contact you shortly!')">
+        <input type="text" placeholder="Your name" class="w-full rounded-md px-3 py-2 border" required>
+        <input type="email" placeholder="Your email" class="w-full rounded-md px-3 py-2 border" required>
+        <textarea placeholder="Message" class="w-full rounded-md px-3 py-2 border" rows="3"></textarea>
+        <div class="flex items-center justify-between">
+          <button class="bg-indigo-600 text-white px-4 py-2 rounded-md">Send</button>
+          <div class="text-xs text-gray-500">We reply within 24 hrs</div>
+        </div>
+      </form>
+    </section>
+
+  </main>
+
+  <!-- Bottom navigation (mobile) -->
+  <nav class="fixed bottom-0 left-0 right-0 bg-white border-t shadow-inner z-30">
+    <div class="max-w-2xl mx-auto px-4 py-2 flex items-center justify-between">
+      <a href="#" class="flex flex-col items-center text-xs">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M13 5v6h6" />
+        </svg>
+        <span>Home</span>
+      </a>
+      <a href="#products" class="flex flex-col items-center text-xs">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h18v4H3zM3 8h18v13H3z" />
+        </svg>
+        <span>Shop</span>
+      </a>
+      <a href="#contact" class="flex flex-col items-center text-xs">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 10a8.38 8.38 0 01-.9 3.8L12 21l-8.1-7.2A8.38 8.38 0 013 10 9 9 0 1112 21" />
+        </svg>
+        <span>Contact</span>
+      </a>
+      <a href="#" class="flex flex-col items-center text-xs">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h4l3 9 4-18 3 9h4" />
+        </svg>
+        <span>Cart</span>
+      </a>
     </div>
   </nav>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <h1>Welcome to Richbrains College</h1>
-    <p class="motto">"Service to God and Humanity"</p>
-    <p class="desc">
-      Empowering students with discipline, integrity, and academic excellence to lead in a changing world.
-    </p>
-    <a href="admission.html" class="btn-main">Apply for Admission</a>
-  </section>
-
-  <!-- WhatsApp -->
-  <a href="https://wa.me/233543911729?text=Hello%2C%20I%20would%20like%20to%20know%20more%20about%20admissions."
-     class="whatsapp-float" target="_blank" aria-label="Chat with Richbrains College">
-    <i class="bi bi-whatsapp"></i>
-  </a>
-
-  <!-- Flyer Modal -->
-  <div class="modal fade" id="flyerModal" tabindex="-1" aria-labelledby="flyerModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-body p-0">
-          <img src="assets/images/flyer.jpg" alt="Richbrains College Admission Flyer">
-        </div>
-        <div class="modal-footer">
-          <a href="admission.html" class="btn btn-success">Apply Now</a>
-          <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 Richbrains College. All Rights Reserved.</p>
+  <footer class="mt-6 text-center text-xs text-gray-500 pb-12">
+    © <span id="year"></span> @2025 Powered by SAS NETWORK — All rights reserved.
   </footer>
 
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
-  <!-- Show flyer modal on page load -->
   <script>
-    window.addEventListener('load', function() {
-      const modal = new bootstrap.Modal(document.getElementById('flyerModal'));
-      modal.show();
+    // year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // mobile menu toggle
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn.addEventListener('click', () => {
+      const isOpen = mobileMenu.classList.contains('translate-x-0');
+      if (isOpen) {
+        mobileMenu.classList.remove('translate-x-0');
+        mobileMenu.classList.add('-translate-x-full');
+      } else {
+        mobileMenu.classList.remove('-translate-x-full');
+        mobileMenu.classList.add('translate-x-0');
+      }
     });
+
+    // close mobile menu by clicking outside
+    document.addEventListener('click', (e) => {
+      if (!mobileMenu.contains(e.target) && !menuBtn.contains(e.target)) {
+        if (!mobileMenu.classList.contains('-translate-x-full')) {
+          mobileMenu.classList.remove('translate-x-0');
+          mobileMenu.classList.add('-translate-x-full');
+        }
+      }
+    }, true);
   </script>
 </body>
 </html>
-
