@@ -1,15 +1,15 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>T-WILL Trading Enterprise</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <style>
-    body { font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; }
-    html { scroll-behavior: smooth; }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>T-WILL Trading Enterprise</title>
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+  body { font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; }
+  html { scroll-behavior: smooth; }
+</style>
 </head>
 <body class="bg-gray-50 text-gray-800">
 
@@ -35,77 +35,69 @@
 
 <main class="max-w-2xl mx-auto pt-20 px-4 pb-28">
 
-  <!-- Hero / Search -->
-  <section class="bg-gradient-to-r from-indigo-600 to-indigo-400 text-white rounded-xl p-5 mb-6 shadow-md">
-    <h1 class="text-xl font-bold mb-2">T-WILL Trading Enterprise</h1>
-    <p class="text-sm opacity-90 mb-3">Your one-stop shop for phones, accessories & home appliances. Fast delivery across Ghana.</p>
-    <form class="flex gap-2 mb-2">
-      <input type="search" id="searchInput" placeholder="Search products..." class="flex-1 rounded-md px-3 py-2 text-sm border-0 focus:outline-none">
-      <button type="button" class="bg-white text-indigo-600 px-4 rounded-md font-semibold text-sm">Search</button>
-    </form>
-    <div class="flex flex-wrap gap-2 text-xs">
-      <button class="categoryBtn bg-white text-indigo-600 px-2 py-1 rounded" data-category="all">All</button>
-      <button class="categoryBtn bg-white text-indigo-600 px-2 py-1 rounded" data-category="headphones">Headphones</button>
-      <button class="categoryBtn bg-white text-indigo-600 px-2 py-1 rounded" data-category="earpieces">Earpieces</button>
-      <button class="categoryBtn bg-white text-indigo-600 px-2 py-1 rounded" data-category="charger">Chargers</button>
-      <button class="categoryBtn bg-white text-indigo-600 px-2 py-1 rounded" data-category="pendrive">Pendrive</button>
-      <button class="categoryBtn bg-white text-indigo-600 px-2 py-1 rounded" data-category="bulbs">Bulbs</button>
-      <button class="categoryBtn bg-white text-indigo-600 px-2 py-1 rounded" data-category="fan">Fan</button>
-      <button class="categoryBtn bg-white text-indigo-600 px-2 py-1 rounded" data-category="kettle">Kettle</button>
-      <button class="categoryBtn bg-white text-indigo-600 px-2 py-1 rounded" data-category="ricecooker">Rice Cooker</button>
-      <button class="categoryBtn bg-white text-indigo-600 px-2 py-1 rounded" data-category="bluetoothspeaker">Bluetooth Speaker</button>
-      <button class="categoryBtn bg-white text-indigo-600 px-2 py-1 rounded" data-category="homeappliances">Home Appliances</button>
-      <button class="categoryBtn bg-white text-indigo-600 px-2 py-1 rounded" data-category="phoneaccessories">Phone Accessories</button>
+<!-- Hero / Search -->
+<section class="bg-gradient-to-r from-indigo-600 to-indigo-400 text-white rounded-xl p-5 mb-6 shadow-md">
+  <h1 class="text-xl font-bold mb-2">T-WILL Trading Enterprise</h1>
+  <p class="text-sm opacity-90 mb-3">Your one-stop shop for phones, accessories & home appliances. Fast delivery across Ghana.</p>
+  <form class="flex gap-2 mb-2">
+    <input type="search" id="searchInput" placeholder="Search products..." class="flex-1 rounded-md px-3 py-2 text-sm border-0 focus:outline-none">
+    <button type="button" class="bg-white text-indigo-600 px-4 rounded-md font-semibold text-sm">Search</button>
+  </form>
+  <div class="flex flex-wrap gap-2 text-xs">
+    <button class="categoryBtn bg-white text-indigo-600 px-2 py-1 rounded" data-category="all">All</button>
+    <button class="categoryBtn bg-white text-indigo-600 px-2 py-1 rounded" data-category="headphones">Headphones</button>
+    <button class="categoryBtn bg-white text-indigo-600 px-2 py-1 rounded" data-category="earpieces">Earpieces</button>
+    <button class="categoryBtn bg-white text-indigo-600 px-2 py-1 rounded" data-category="charger">Chargers</button>
+    <button class="categoryBtn bg-white text-indigo-600 px-2 py-1 rounded" data-category="pendrive">Pendrive</button>
+    <button class="categoryBtn bg-white text-indigo-600 px-2 py-1 rounded" data-category="bulbs">Bulbs</button>
+    <button class="categoryBtn bg-white text-indigo-600 px-2 py-1 rounded" data-category="fan">Fan</button>
+    <button class="categoryBtn bg-white text-indigo-600 px-2 py-1 rounded" data-category="kettle">Kettle</button>
+    <button class="categoryBtn bg-white text-indigo-600 px-2 py-1 rounded" data-category="ricecooker">Rice Cooker</button>
+    <button class="categoryBtn bg-white text-indigo-600 px-2 py-1 rounded" data-category="bluetoothspeaker">Bluetooth Speaker</button>
+    <button class="categoryBtn bg-white text-indigo-600 px-2 py-1 rounded" data-category="homeappliances">Home Appliances</button>
+    <button class="categoryBtn bg-white text-indigo-600 px-2 py-1 rounded" data-category="phoneaccessories">Phone Accessories</button>
+  </div>
+</section>
+
+<!-- Products Grid -->
+<section id="products" class="grid grid-cols-2 gap-3">
+
+<!-- Product Cards -->
+<script>
+const products = [
+  {name:"Wireless Headphones", category:"headphones", price:250, img:"https://images.unsplash.com/photo-1518444021086-5823be1e9a07?auto=format&fit=crop&w=600&q=60"},
+  {name:"Earpiece 2.0", category:"earpieces", price:120, img:"https://images.unsplash.com/photo-1518444021086-5823be1e9a07?auto=format&fit=crop&w=600&q=60"},
+  {name:"Fast Charger", category:"charger", price:120, img:"https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=600&q=60"},
+  {name:"Pendrive 64GB", category:"pendrive", price:80, img:"https://images.unsplash.com/photo-1591012911209-1a5f4f7c28c2?auto=format&fit=crop&w=600&q=60"},
+  {name:"LED Bulb", category:"bulbs", price:25, img:"https://images.unsplash.com/photo-1591012911209-1a5f4f7c28c2?auto=format&fit=crop&w=600&q=60"},
+  {name:"Ceiling Fan", category:"fan", price:350, img:"https://images.unsplash.com/photo-1578894380912-0fc5e19b7a80?auto=format&fit=crop&w=600&q=60"},
+  {name:"Electric Kettle", category:"kettle", price:180, img:"https://images.unsplash.com/photo-1582719478145-1f29d7a4a2e4?auto=format&fit=crop&w=600&q=60"},
+  {name:"Rice Cooker", category:"ricecooker", price:300, img:"https://images.unsplash.com/photo-1598866530747-7b3b0c667ed0?auto=format&fit=crop&w=600&q=60"},
+  {name:"Bluetooth Speaker", category:"bluetoothspeaker", price:350, img:"https://images.unsplash.com/photo-1518444021086-5823be1e9a07?auto=format&fit=crop&w=600&q=60"},
+  {name:"Mixer Grinder", category:"homeappliances", price:500, img:"https://images.unsplash.com/photo-1591012911209-1a5f4f7c28c2?auto=format&fit=crop&w=600&q=60"},
+  {name:"Phone Case", category:"phoneaccessories", price:50, img:"https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&w=600&q=60"}
+];
+
+const productSection = document.getElementById('products');
+products.forEach(p => {
+  const div = document.createElement('div');
+  div.className = 'bg-white rounded-lg p-3 shadow-sm product-card';
+  div.dataset.name = p.name;
+  div.dataset.category = p.category;
+  div.innerHTML = `
+    <img src="${p.img}" class="w-full h-28 object-cover rounded-md mb-2" alt="${p.name}">
+    <div class="text-sm font-semibold">${p.name}</div>
+    <div class="text-xs text-gray-500 mb-2">Description here</div>
+    <div class="flex items-center justify-between">
+      <div class="text-indigo-600 font-bold">GHS ${p.price}</div>
+      <button onclick='addToCart({name:"${p.name}", price:${p.price}})' class="bg-indigo-600 text-white px-3 py-1 rounded-md text-sm">Add</button>
     </div>
-  </section>
+  `;
+  productSection.appendChild(div);
+});
+</script>
 
-  <!-- Products Grid -->
-  <section id="products" class="grid grid-cols-2 gap-3">
-    <!-- Example Product Card -->
-    <div class="bg-white rounded-lg p-3 shadow-sm product-card" data-name="Wireless Headphones" data-category="headphones">
-      <img src="https://images.unsplash.com/photo-1518444021086-5823be1e9a07?auto=format&fit=crop&w=600&q=60" class="w-full h-28 object-cover rounded-md mb-2" alt="Wireless Headphones">
-      <div class="text-sm font-semibold">Wireless Headphones</div>
-      <div class="text-xs text-gray-500 mb-2">Noise-cancelling</div>
-      <div class="flex items-center justify-between">
-        <div class="text-indigo-600 font-bold">GHS 250</div>
-        <button onclick="addToCart({name:'Wireless Headphones', price:250})" class="bg-indigo-600 text-white px-3 py-1 rounded-md text-sm">Add</button>
-      </div>
-    </div>
-
-    <div class="bg-white rounded-lg p-3 shadow-sm product-card" data-name="Fast Charger" data-category="charger">
-      <img src="https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=600&q=60" class="w-full h-28 object-cover rounded-md mb-2" alt="Fast Charger">
-      <div class="text-sm font-semibold">Fast Charger</div>
-      <div class="text-xs text-gray-500 mb-2">30W • USB-C</div>
-      <div class="flex items-center justify-between">
-        <div class="text-indigo-600 font-bold">GHS 120</div>
-        <button onclick="addToCart({name:'Fast Charger', price:120})" class="bg-indigo-600 text-white px-3 py-1 rounded-md text-sm">Add</button>
-      </div>
-    </div>
-
-    <div class="bg-white rounded-lg p-3 shadow-sm product-card" data-name="Bluetooth Speaker" data-category="bluetoothspeaker">
-      <img src="https://images.unsplash.com/photo-1518444021086-5823be1e9a07?auto=format&fit=crop&w=600&q=60" class="w-full h-28 object-cover rounded-md mb-2" alt="Bluetooth Speaker">
-      <div class="text-sm font-semibold">Bluetooth Speaker</div>
-      <div class="text-xs text-gray-500 mb-2">Portable, 10W</div>
-      <div class="flex items-center justify-between">
-        <div class="text-indigo-600 font-bold">GHS 350</div>
-        <button onclick="addToCart({name:'Bluetooth Speaker', price:350})" class="bg-indigo-600 text-white px-3 py-1 rounded-md text-sm">Add</button>
-      </div>
-    </div>
-
-    <div class="bg-white rounded-lg p-3 shadow-sm product-card" data-name="Electric Kettle" data-category="kettle">
-      <img src="https://images.unsplash.com/photo-1582719478145-1f29d7a4a2e4?auto=format&fit=crop&w=600&q=60" class="w-full h-28 object-cover rounded-md mb-2" alt="Electric Kettle">
-      <div class="text-sm font-semibold">Electric Kettle</div>
-      <div class="text-xs text-gray-500 mb-2">1.7L • Stainless Steel</div>
-      <div class="flex items-center justify-between">
-        <div class="text-indigo-600 font-bold">GHS 180</div>
-        <button onclick="addToCart({name:'Electric Kettle', price:180})" class="bg-indigo-600 text-white px-3 py-1 rounded-md text-sm">Add</button>
-      </div>
-    </div>
-
-    <!-- Add more product cards as needed -->
-  </section>
-
-</main>
+</section>
 
 <!-- Cart Modal -->
 <div id="cartModal" class="fixed inset-0 bg-black bg-opacity-40 flex justify-center items-center hidden z-50">
@@ -125,66 +117,63 @@
 </footer>
 
 <script>
-  document.getElementById('year').textContent = new Date().getFullYear();
+document.getElementById('year').textContent = new Date().getFullYear();
 
-  let cart = [];
+let cart = [];
 
-  function addToCart(product) {
-    const existing = cart.find(item => item.name === product.name);
-    if (existing) existing.qty += 1;
-    else cart.push({...product, qty:1});
-    updateCart();
-  }
+function addToCart(product) {
+  const existing = cart.find(item => item.name === product.name);
+  if (existing) existing.qty += 1;
+  else cart.push({...product, qty:1});
+  updateCart();
+}
 
-  function updateCart() {
-    const cartItems = document.getElementById('cartItems');
-    const cartCount = document.getElementById('cartCount');
-    const cartTotal = document.getElementById('cartTotal');
-    cartItems.innerHTML = '';
-    let total = 0;
-    cart.forEach(item => {
-      total += item.price * item.qty;
-      const div = document.createElement('div');
-      div.className = 'flex justify-between text-sm';
-      div.innerHTML = `
-        <span>${item.name} x${item.qty}</span>
-        <span>GHS ${item.price * item.qty}</span>
-      `;
-      cartItems.appendChild(div);
-    });
-    cartCount.textContent = cart.reduce((sum, i) => sum + i.qty, 0);
-    cartTotal.textContent = `GHS ${total}`;
-    document.getElementById('cartModal').classList.remove('hidden');
-  }
-
-  function closeCart() {
-    document.getElementById('cartModal').classList.add('hidden');
-  }
-
-  // Category filtering
-  const categoryButtons = document.querySelectorAll('.categoryBtn');
-  const productCards = document.querySelectorAll('.product-card');
-
-  categoryButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const cat = btn.dataset.category;
-      productCards.forEach(card => {
-        card.style.display = (cat === 'all' || card.dataset.category === cat) ? 'block' : 'none';
-      });
-    });
+function updateCart() {
+  const cartItems = document.getElementById('cartItems');
+  const cartCount = document.getElementById('cartCount');
+  const cartTotal = document.getElementById('cartTotal');
+  cartItems.innerHTML = '';
+  let total = 0;
+  cart.forEach(item => {
+    total += item.price * item.qty;
+    const div = document.createElement('div');
+    div.className = 'flex justify-between text-sm';
+    div.innerHTML = `<span>${item.name} x${item.qty}</span><span>GHS ${item.price*item.qty}</span>`;
+    cartItems.appendChild(div);
   });
+  cartCount.textContent = cart.reduce((sum,i)=>sum+i.qty,0);
+  cartTotal.textContent = `GHS ${total}`;
+  document.getElementById('cartModal').classList.remove('hidden');
+}
 
-  // Search
-  const searchInput = document.getElementById('searchInput');
-  searchInput.addEventListener('input', () => {
-    const query = searchInput.value.toLowerCase();
+function closeCart() {
+  document.getElementById('cartModal').classList.add('hidden');
+}
+
+// Category filter
+const categoryButtons = document.querySelectorAll('.categoryBtn');
+const productCards = document.querySelectorAll('.product-card');
+
+categoryButtons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const cat = btn.dataset.category;
     productCards.forEach(card => {
-      card.style.display = card.dataset.name.toLowerCase().includes(query) ? 'block' : 'none';
+      card.style.display = (cat==='all'||card.dataset.category===cat)?'block':'none';
     });
   });
+});
 
-  // Open cart by clicking icon
-  document.getElementById('cartBtn').addEventListener('click', updateCart);
+// Search
+const searchInput = document.getElementById('searchInput');
+searchInput.addEventListener('input', ()=>{
+  const query = searchInput.value.toLowerCase();
+  productCards.forEach(card=>{
+    card.style.display = card.dataset.name.toLowerCase().includes(query)?'block':'none';
+  });
+});
+
+document.getElementById('cartBtn').addEventListener('click', updateCart);
 </script>
+
 </body>
 </html>
