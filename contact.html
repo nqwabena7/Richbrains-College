@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact Us | Pursuit of Excellence Academy</title>
+  <title>Contact Us | Richbrains College</title>
 
   <!-- Bootstrap & Font Awesome -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -13,27 +13,38 @@
     body {
       font-family: "Poppins", sans-serif;
       color: #333;
-      background: #fff;
+      background: #f8f9fa;
       margin: 0;
       padding: 0;
     }
 
     header, footer {
-      background: #0d6efd;
+      background: #0a1f44;
       color: #fff;
-      padding: 15px;
+      padding: 18px;
       text-align: center;
+    }
+
+    header h1 {
+      margin-bottom: 5px;
+      font-weight: 700;
+    }
+
+    header small {
+      color: #f4c430;
+      font-style: italic;
     }
 
     header nav a {
       color: #fff;
-      margin: 0 10px;
+      margin: 0 12px;
       text-decoration: none;
       font-weight: 500;
     }
 
     header nav a:hover {
       text-decoration: underline;
+      color: #f4c430;
     }
 
     .contact-section {
@@ -42,17 +53,27 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      text-align: center;
-      padding: 20px;
+      padding: 30px 15px;
     }
 
     .contact-box {
       width: 100%;
-      max-width: 500px;
-      background: #f8f9fa;
-      padding: 25px;
-      border-radius: 12px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      max-width: 520px;
+      background: #fff;
+      padding: 30px;
+      border-radius: 14px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+
+    .contact-box h2 {
+      color: #0a1f44;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .contact-box p {
+      font-size: 15px;
+      color: #555;
     }
 
     .alert {
@@ -60,27 +81,38 @@
       margin-bottom: 15px;
     }
 
+    .btn-primary {
+      background: #0a1f44;
+      border: none;
+      font-weight: 600;
+    }
+
+    .btn-primary:hover {
+      background: #003f88;
+    }
+
     .social-icons a {
-      font-size: 20px;
+      font-size: 18px;
       color: #fff;
-      background: #0d6efd;
+      background: #0a1f44;
       padding: 10px 14px;
       border-radius: 50%;
-      margin: 5px;
+      margin: 6px;
       display: inline-block;
       transition: 0.3s;
     }
 
     .social-icons a:hover {
-      background: #0056b3;
+      background: #003f88;
+      transform: translateY(-3px);
     }
 
     iframe {
       width: 100%;
       height: 250px;
       border: none;
-      border-radius: 8px;
-      margin-top: 15px;
+      border-radius: 10px;
+      margin-top: 18px;
     }
 
     footer {
@@ -102,7 +134,7 @@
       align-items: center;
       justify-content: center;
       font-size: 28px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
       transition: 0.3s;
       z-index: 1000;
       text-decoration: none;
@@ -118,27 +150,34 @@
 
   <!-- HEADER -->
   <header>
-    <h1>Pursuit of Excellence Academy</h1>
-    <nav>
+    <h1>Richbrains College</h1>
+    <small>Service to God and Humanity</small>
+
+    <nav class="mt-2">
       <a href="index.html">Home</a>
       <a href="admission.html">Admissions</a>
       <a href="faculty.html">Faculty</a>
       <a href="contact.html">Contact</a>
     </nav>
-    <div>
-      <a href="tel:+233535594900" style="color:#fff;margin-right:10px;">
-        <i class="fas fa-phone"></i> +233 53 559 4900
+
+    <div class="mt-2">
+      <a href="tel:+233543911729" style="color:#fff;margin-right:15px;">
+        <i class="fas fa-phone"></i> +233 54 391 1729
       </a>
-      <a href="mailto:info@poeacademy.com" style="color:#fff;">
-        <i class="fas fa-envelope"></i> info@poeacademy.com
+      <a href="mailto:info@richbrainscollege.edu.gh" style="color:#fff;">
+        <i class="fas fa-envelope"></i> info@richbrainscollege.edu.gh
       </a>
     </div>
   </header>
 
-  <!-- CONTACT FORM -->
+  <!-- CONTACT SECTION -->
   <section class="contact-section">
-    <div class="contact-box">
+    <div class="contact-box text-center">
       <h2>Contact Us</h2>
+      <p>
+        For admissions enquiries, academic information, or general assistance,
+        please contact Richbrains College using the form below.
+      </p>
 
       <!-- Success Alert -->
       <div id="success-alert" class="alert alert-success" role="alert">
@@ -164,7 +203,9 @@
           <textarea name="message" rows="4" class="form-control" required></textarea>
         </div>
 
-        <button type="submit" class="btn btn-primary w-100">Send Message</button>
+        <button type="submit" class="btn btn-primary w-100">
+          Send Message
+        </button>
       </form>
 
       <!-- Social Icons -->
@@ -177,8 +218,7 @@
 
       <!-- Map -->
       <iframe 
-        src="https://www.google.com/maps?q=Bodada%20Jasikan%20Oti%20Region&output=embed" 
-        allowfullscreen 
+        src="https://www.google.com/maps?q=Bodada%20Jasikan%20Oti%20Region&output=embed"
         loading="lazy">
       </iframe>
     </div>
@@ -186,12 +226,15 @@
 
   <!-- FOOTER -->
   <footer>
-    &copy; 2025 Pursuit of Excellence Academy, Bodada – Jasikan, Oti Region.
+    &copy; 2025 Richbrains College, Bodada – Jasikan, Oti Region.<br>
+    Service to God and Humanity
   </footer>
 
   <!-- Floating WhatsApp Button -->
-  <a href="https://wa.me/233535594900?text=Hello%20Pursuit%20of%20Excellence%20Academy%20👋%2C%20I%20got%20your%20contact%20from%20your%20website%20and%20would%20like%20to%20make%20an%20inquiry." 
-     class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+  <a href="https://wa.me/233543911729?text=Hello%20Richbrains%20College%20👋%2C%20I%20got%20your%20contact%20from%20your%20website%20and%20would%20like%20to%20make%20an%20enquiry."
+     class="whatsapp-float"
+     target="_blank"
+     aria-label="Chat on WhatsApp">
     <i class="fab fa-whatsapp"></i>
   </a>
 
