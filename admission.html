@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Apply to Pursuit of Excellence Academy. Admissions open for WASSCE 2026 preparation in Bodada - Jasikan, Oti Region.">
+  <title>Admissions - Pursuit of Excellence Academy</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f8f9fa;
+      padding-top: 88px; /* room for fixed navbar */
+    }
+
+    .apply-btn {
+      display: inline-block;
+      margin-top: 25px;
+      background: #f8d210;
+      color: #000;
+      font-weight: bold;
+      border: none;
+      padding: 15px 35px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-size: 1.1rem;
+      transition: 0.3s ease;
+    }
+    .apply-btn:hover {
+      background: #ffc107;
+      color: #000;
+    }
+
+    .btn-submit {
+      background: #002147;
+      color: #fff;
+      border: none;
+      padding: 12px 30px;
+      border-radius: 30px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    .btn-submit:hover {
+      background: #0056b3;
+    }
+
+    fieldset {
+      border: 2px solid #002147;
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 25px;
+      background: #fff;
+    }
+
+    legend {
+      font-weight: bold;
+      color: #002147;
+      font-size: 1.1rem;
+      width: auto;
+      padding: 0 10px;
+    }
+
+    label {
+      font-weight: 500;
+    }
+
+    input, select, textarea {
+      margin-top: 4px;
+    }
+
+    /* Gradient header styling for modal */
+    .modal-header {
+      background: linear-gradient(to right, #006400, #00994d);
+      color: #fff;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+    }
+
+    /* Footer styling */
+    footer {
+      background: #002147;
+      color: #fff;
+    }
+
+    footer h5 {
+      color: #f8d210;
+      font-weight: bold;
+    }
+
+    footer a {
+      color: #ddd;
+      text-decoration: none;
+    }
+    footer a:hover {
+      color: #f8d210;
+      text-decoration: underline;
+    }
+
+    /* make Admissions nav link stand out */
+    .nav-link.active {
+      color: #f8d210 !important;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar (full, responsive) -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow-sm">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <img src="assets/images/logo.png" width="50" height="50" class="rounded-circle me-2" alt="School Logo">
+        <div>
+          <span class="fw-bold">Pursuit of Excellence Academy</span><br>
+          <small class="text-warning fst-italic">"Discipline, Knowledge, and Integrity"</small>
+        </div>
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-end" id="navMenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="school-life.html">School Life</a></li>
+          <li class="nav-item"><a class="nav-link active" href="admission.html">Admissions</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="text-center text-white py-5" style="background:linear-gradient(to right,#006400,#00994d);">
+    <h1>Admissions Now Open!</h1>
+    <p>Join Pursuit of Excellence Academy and prepare for success in WASSCE 2026 and beyond.</p>
+  </header>
+
+  <!-- Page Content -->
+  <div class="container my-5 text-center">
+    <img src="assets/images/flyer.png" alt="Admission Flyer" class="img-fluid rounded mb-3">
+    <h2 class="fw-bold text-primary">Welcome to Pursuit of Excellence Academy</h2>
+    <p>We offer all major secondary school courses: Science, Arts, Business, Visual Arts, Home Economics, Agriculture.</p>
+
+    <a href="#" class="apply-btn" data-bs-toggle="modal" data-bs-target="#admissionModal">Apply Now</a>
+  </div>
+
+  <!-- Admission Form Modal -->
+  <div class="modal fade" id="admissionModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content p-0">
+        <div class="modal-header">
+          <h5 class="modal-title fw-bold">Pursuit of Excellence Academy - Admission Form</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-4">
+
+          <!-- Netlify-enabled Form -->
+          <form id="applicationForm" name="admission" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+            <input type="hidden" name="form-name" value="admission">
+            <p class="d-none"><label>Don’t fill this out if you’re human: <input name="bot-field"></label></p>
+
+            <!-- Section 1 -->
+            <fieldset>
+              <legend>1. Student Information</legend>
+              <div class="row g-4">
+                <div class="col-md-6"><label>Full Name</label><input type="text" name="Full Name" class="form-control" required></div>
+                <div class="col-md-6"><label>Date of Birth</label><input type="date" name="Date of Birth" class="form-control" required></div>
+                <div class="col-md-6"><label>Gender</label>
+                  <select name="Gender" class="form-select" required><option selected disabled>Select Gender</option><option>Male</option><option>Female</option></select>
+                </div>
+                <div class="col-md-6"><label>Residential Address</label><input type="text" name="Residential Address" class="form-control" required></div>
+              </div>
+            </fieldset>
+
+            <!-- Section 2 -->
+            <fieldset>
+              <legend>2. Parent / Guardian Information</legend>
+              <div class="row g-4">
+                <div class="col-md-6"><label>Parent/Guardian Name</label><input type="text" name="Parent/Guardian Name" class="form-control" required></div>
+                <div class="col-md-6"><label>Relationship to Student</label><input type="text" name="Relationship to Student" class="form-control" required></div>
+                <div class="col-md-6"><label>Contact Number</label><input type="tel" name="Parent Contact" class="form-control" required></div>
+                <div class="col-md-6"><label>Occupation</label><input type="text" name="Occupation" class="form-control"></div>
+              </div>
+            </fieldset>
+
+            <!-- Section 3 -->
+            <fieldset>
+              <legend>3. Medical Information</legend>
+              <div class="row g-4">
+                <div class="col-md-6"><label>Does the student have any condition?</label>
+                  <select name="Medical Condition" class="form-select"><option>No</option><option>Yes</option></select>
+                </div>
+                <div class="col-md-6"><label>If Yes, please state</label><input type="text" name="Condition Details" class="form-control"></div>
+              </div>
+            </fieldset>
+
+            <!-- Section 4 -->
+            <fieldset>
+              <legend>4. Educational Information</legend>
+              <div class="row g-4">
+                <div class="col-md-6"><label>BECE Index Number</label><input type="text" name="BECE Index Number" class="form-control"></div>
+                <div class="col-md-6"><label>JHS Year of Completion</label><input type="text" name="JHS Year of Completion" class="form-control"></div>
+                <div class="col-md-6"><label>Programme</label>
+                  <select name="Programme" class="form-select" required>
+                    <option disabled selected>Select Programme</option>
+                    <option>General Science</option><option>General Arts</option><option>Business</option><option>Visual Arts</option><option>Home Economics</option><option>Agricultural Science</option>
+                  </select>
+                </div>
+                <div class="col-md-6"><label>Electives</label><textarea name="Electives" rows="2" class="form-control"></textarea></div>
+              </div>
+            </fieldset>
+
+            <!-- Section 5 -->
+            <fieldset>
+              <legend>5. Declaration</legend>
+              <div class="row g-4">
+                <div class="col-md-6"><label>Parent/Guardian Signature (Type name)</label><input type="text" name="Parent/Guardian Signature" class="form-control"></div>
+                <div class="col-md-6"><label>Student Signature (Type name)</label><input type="text" name="Student Signature" class="form-control"></div>
+              </div>
+            </fieldset>
+
+            <!-- Section 6 -->
+            <fieldset disabled>
+              <legend>6. Administrative Purposes</legend>
+              <p><strong>Signature:</strong> ......................................           Administrator...........................................</p>
+            </fieldset>
+
+            <div class="text-center mt-4">
+              <button type="submit" class="btn-submit">Submit Application</button>
+            </div>
+          </form>
+
+          <!-- Success Notice -->
+          <div id="noticeBox" class="alert alert-success mt-4 d-none text-center">
+            <strong>Application submitted!</strong> Download your form for campus submission. <br>
+            <button id="downloadBtn" class="btn btn-success mt-3">Download PDF</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WhatsApp Button -->
+  <a href="https://wa.me/233535594900?text=Hello%20Pursuit%20Academy"
+     class="btn btn-success rounded-circle position-fixed"
+     style="bottom:20px;right:20px;font-size:22px;padding:12px 15px;">
+    <i class="bi bi-whatsapp"></i>
+  </a>
+
+  <!-- Footer -->
+  <footer class="pt-5 pb-3 mt-5">
+    <div class="container text-center text-md-start">
+      <div class="row">
+        <div class="col-md-4 mb-4">
+          <h5>Pursuit of Excellence Academy</h5>
+          <p>Bodada - Jasikan, Oti Region, Ghana</p>
+          <p><i class="bi bi-telephone"></i> +233 53 559 4900</p>
+          <p><i class="bi bi-envelope"></i> info@pursuitacademy.edu.gh</p>
+        </div>
+        <div class="col-md-4 mb-4">
+          <h5>Quick Links</h5>
+          <ul class="list-unstyled">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="school-life.html">School Life</a></li>
+            <li><a href="admission.html">Admissions</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4 mb-4">
+          <h5>Follow Us</h5>
+          <a href="#" class="me-3 text-light"><i class="bi bi-facebook fs-4"></i></a>
+          <a href="#" class="me-3 text-light"><i class="bi bi-instagram fs-4"></i></a>
+          <a href="#" class="me-3 text-light"><i class="bi bi-twitter fs-4"></i></a>
+          <a href="#" class="text-light"><i class="bi bi-youtube fs-4"></i></a>
+        </div>
+      </div>
+      <div class="text-center border-top pt-3 mt-3">
+        &copy; 2025 Pursuit of Excellence Academy. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    const { jsPDF } = window.jspdf;
+    const form = document.getElementById("applicationForm");
+    const noticeBox = document.getElementById("noticeBox");
+
+    form.addEventListener("submit", async function(e) {
+      e.preventDefault();
+      const formData = new FormData(form);
+
+      // Netlify form submission
+      await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(formData).toString()
+      });
+
+      form.classList.add("d-none");
+      noticeBox.classList.remove("d-none");
+    });
+
+    document.getElementById("downloadBtn").addEventListener("click", function() {
+      const doc = new jsPDF({ format: "a4" });
+      const width = doc.internal.pageSize.getWidth();
+
+      // Rounded gradient header box (centered)
+      const x = width / 2 - 70;
+      const yTop = 10;
+      const boxWidth = 140;
+      const boxHeight = 30;
+      const radius = 6;
+      doc.setFillColor(0, 100, 0);
+      // Note: jsPDF doesn't support gradients on all builds — using solid fill matching the green.
+      doc.roundedRect(x, yTop, boxWidth, boxHeight, radius, radius, "F");
+
+      doc.setTextColor(255, 255, 255);
+      doc.setFont("helvetica", "bold");
+      doc.setFontSize(14);
+      doc.text("PURSUIT OF EXCELLENCE ACADEMY", width / 2, 20, { align: "center" });
+      doc.setFontSize(10);
+      doc.text("AFFILIATE OF BODADA (PRESEC)", width / 2, 27, { align: "center" });
+      doc.setFontSize(12);
+      doc.text("ADMISSION FORM", width / 2, 34, { align: "center" });
+
+      doc.setTextColor(0, 0, 0);
+      let y = 50;
+      const data = new FormData(form);
+      doc.setFont("helvetica", "normal");
+      doc.setFontSize(11);
+
+      function line(label, value = "") {
+        if (!value) {
+          doc.text(`${label}: ............................................................`, 20, y);
+          y += 10;
+        } else {
+          const text = `${label}: ${value}`;
+          const splitText = doc.splitTextToSize(text, 170);
+          doc.text(splitText, 20, y);
+          y += splitText.length * 8;
+        }
+        if (y > 280) { doc.addPage(); y = 20; }
+      }
+
+      // Sections
+      doc.text("1. STUDENT INFORMATION", 20, y); y += 8;
+      line("Full Name", data.get("Full Name"));
+      line("Date of Birth", data.get("Date of Birth"));
+      line("Gender", data.get("Gender"));
+      line("Residential Address", data.get("Residential Address"));
+
+      y += 5; doc.text("2. PARENT / GUARDIAN INFORMATION", 20, y); y += 8;
+      line("Parent/Guardian Name", data.get("Parent/Guardian Name"));
+      line("Relationship to Student", data.get("Relationship to Student"));
+      line("Contact Number", data.get("Parent Contact"));
+      line("Occupation", data.get("Occupation"));
+
+      y += 5; doc.text("3. MEDICAL INFORMATION", 20, y); y += 8;
+      line("Condition?", data.get("Medical Condition"));
+      line("If Yes, state", data.get("Condition Details"));
+
+      y += 5; doc.text("4. EDUCATIONAL INFORMATION", 20, y); y += 8;
+      line("BECE Index Number", data.get("BECE Index Number"));
+      line("JHS Year of Completion", data.get("JHS Year of Completion"));
+      line("Programme", data.get("Programme"));
+      line("Electives", data.get("Electives"));
+
+      y += 5; doc.text("5. DECLARATION", 20, y); y += 8;
+      line("Parent/Guardian Signature", data.get("Parent/Guardian Signature"));
+      line("Student Signature", data.get("Student Signature"));
+
+      y += 5; doc.text("6. ADMINISTRATIVE PURPOSES", 20, y); y += 8;
+      line("Administrator’s Signature");
+
+      doc.save("PursuitAcademy_AdmissionForm.pdf");
+
+      // Redirect back to admission page after download
+      setTimeout(() => {
+        // If you want to return to the same page, use the same filename or root:
+        window.location.href = "admission.html";
+      }, 1000);
+    });
+  </script>
+</body>
+</html>

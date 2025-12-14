@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pursuit of Excellence Academy</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      height: 100%;
+    }
+
+    /* Background Slider */
+    .bg-slider {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      overflow: hidden;
+    }
+
+    .bg-slide {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      opacity: 0;
+      animation: slide 18s infinite;
+    }
+
+    .bg-slide:nth-child(1) { background-image: url('assets/images/bg1.jpeg'); animation-delay: 0s; }
+    .bg-slide:nth-child(2) { background-image: url('assets/images/bg2.jpeg'); animation-delay: 6s; }
+    .bg-slide:nth-child(3) { background-image: url('assets/images/bg31.jpeg'); animation-delay: 12s; }
+
+    @keyframes slide {
+      0% { opacity: 0; }
+      8% { opacity: 1; }
+      33% { opacity: 1; }
+      41% { opacity: 0; }
+      100% { opacity: 0; }
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.55);
+      z-index: -1;
+    }
+
+    /* Hero Section */
+    .hero {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      text-align: center;
+      padding: 0 20px;
+      flex-direction: column;
+    }
+
+    .hero h1 { font-size: 3rem; font-weight: 700; }
+    .hero .motto {
+      font-size: 1.2rem;
+      font-style: italic;
+      color: #f8d210;
+      margin-top: 10px;
+      margin-bottom: 25px;
+    }
+    .hero p { font-size: 1.2rem; margin-bottom: 20px; }
+
+    .btn-main {
+      background: #f8d210;
+      color: #000;
+      font-weight: bold;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 30px;
+      transition: 0.3s ease;
+    }
+    .btn-main:hover { background: #ffc107; color: #000; }
+
+    footer {
+      background: rgba(0,0,0,0.8);
+      color: #fff;
+      text-align: center;
+      padding: 15px 10px;
+      position: relative;
+    }
+
+    /* Announcement Section */
+    .announcement {
+      background: #fff;
+      color: #333;
+      padding: 60px 20px;
+    }
+
+    .announcement h2 {
+      color: #003366;
+      font-weight: 700;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .announcement ul {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 20px;
+    }
+    .announcement ul li::before {
+      content: "✅ ";
+    }
+
+    .flyer-img {
+      border-radius: 10px;
+      width: 100%;
+      max-width: 400px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+
+    /* Navbar Logo */
+    .navbar-brand img {
+      width: 50px;
+      height: 50px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-right: 10px;
+    }
+
+    /* Flyer Modal */
+    .modal-flyer .modal-content {
+      background: transparent;
+      border: none;
+      box-shadow: none;
+    }
+    .modal-flyer img {
+      width: 100%;
+      max-width: 450px;
+      border-radius: 10px;
+      animation: popIn 0.5s ease;
+    }
+    @keyframes popIn {
+      from { transform: scale(0.8); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+    .modal-flyer .btn-close {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background: #fff;
+      border-radius: 50%;
+      padding: 10px;
+      opacity: 0.8;
+    }
+
+    /* Professional WhatsApp Floating Button */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 22px;
+      right: 22px;
+      background-color: #25d366;
+      color: white;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      font-size: 30px;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+      z-index: 1000;
+      animation: pulse 2s infinite;
+      transition: transform 0.25s ease, background-color 0.25s ease;
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+      background-color: #1ebe57;
+      box-shadow: 0 0 20px rgba(37, 211, 102, 0.6);
+      animation: none;
+    }
+
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(37,211,102,0.4); }
+      70% { box-shadow: 0 0 0 15px rgba(37,211,102,0); }
+      100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); }
+    }
+
+    /* Tooltip Style */
+    .whatsapp-tooltip {
+      position: fixed;
+      bottom: 95px;
+      right: 30px;
+      background-color: rgba(0,0,0,0.8);
+      color: #fff;
+      padding: 6px 12px;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(10px);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+      z-index: 1000;
+    }
+
+    .whatsapp-float:hover + .whatsapp-tooltip {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2rem; }
+      .hero p { font-size: 1rem; }
+      .announcement h2 { font-size: 1.6rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Background Slider -->
+  <div class="bg-slider">
+    <div class="bg-slide"></div>
+    <div class="bg-slide"></div>
+    <div class="bg-slide"></div>
+    <div class="overlay"></div>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark bg-opacity-75">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="#">
+        <img src="assets/images/logo.png" alt="School Logo">
+        <div>
+          <span>Pursuit of Excellence Academy</span><br>
+          <small class="text-warning fst-italic">"Discipline, Knowledge, and Integrity"</small>
+        </div>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="admission.html">Admissions</a></li>
+          <li class="nav-item"><a class="nav-link" href="school-life.html">School Life</a></li>
+          <li class="nav-item"><a class="nav-link" href="faculty.html">Faculty</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div>
+      <h1>Welcome to Pursuit of Excellence Academy</h1>
+      <p class="motto">"Discipline, Knowledge, and Integrity"</p>
+      <p>Empowering Students to Achieve Their Best</p>
+      <a href="#announcement" class="btn-main">View Admission Info</a>
+    </div>
+  </section>
+
+  <!-- Announcement Section -->
+  <section id="announcement" class="announcement">
+    <div class="container">
+      <h2>🎓 Admissions Now Open for SHS 1–3 Students!</h2>
+      <div class="row align-items-center">
+        <div class="col-md-7">
+          <p>At <strong>Pursuit of Excellence Academy</strong>, we offer all major secondary school courses, including:</p>
+          <ul>
+            <li>General Science</li>
+            <li>General Arts</li>
+            <li>Business</li>
+            <li>Visual Arts</li>
+            <li>Home Economics</li>
+            <li>Agricultural Science</li>
+          </ul>
+          <p>
+            Many of our students are those who couldn’t pass one or two subjects in their previous schools,
+            or those who had to drop out and are eager to continue their education.
+          </p>
+          <p>
+            Here, we believe in <strong>second chances and excellence</strong>. With our dedicated teachers, structured learning system,
+            and student-centered approach, you are guaranteed to come out with <strong>flying colours!</strong> 🌟
+          </p>
+          <p><strong>📅 Admissions are ongoing!</strong> Register now as WASSCE 2026 begins in <strong>April 2026</strong>.</p>
+          <a href="admission.html" class="btn-main">Apply Now</a>
+        </div>
+        <div class="col-md-5 text-center mt-4 mt-md-0">
+          <img src="assets/images/flyer.png" alt="Admissions Flyer" class="flyer-img">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Flyer Modal -->
+  <div class="modal fade modal-flyer" id="flyerModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered text-center">
+      <div class="modal-content position-relative">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <img src="assets/images/flyer.png" alt="Admissions Flyer">
+      </div>
+    </div>
+  </div>
+
+  <!-- WhatsApp Floating Button + Tooltip -->
+  <a href="https://wa.me/233535594900?text=Hello%2C%20I%20would%20like%20to%20chat%20with%20the%20administration%20about%20admissions." 
+     class="whatsapp-float" target="_blank" aria-label="Chat with Administration">
+    <i class="bi bi-whatsapp"></i>
+  </a>
+  <div class="whatsapp-tooltip">Chat with Administration</div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Pursuit of Excellence Academy. All rights reserved.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Auto popup for flyer
+    window.addEventListener('load', function() {
+      const flyerModal = new bootstrap.Modal(document.getElementById('flyerModal'));
+      flyerModal.show();
+    });
+  </script>
+</body>
+</html>
